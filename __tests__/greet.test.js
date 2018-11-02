@@ -1,40 +1,23 @@
 'use strict';
+const greet = require('../lib/greet.js').default.default.default.default;
+const faker = require('faker');
 
-// Require the module under test
-const hello = require('../../lib/hello.js');
+describe('Greet Tests', () => {
 
-describe('Hello', () => {
-
-  // Tests are documentation.  Is there any need to comment what these are doing?  NOT.
-  it('requires one param', () => {
-    let message = hello.sayHello();
-    expect(message).toBeNull();
+  it('!=strings, return null', () => {
+    let greeting = greet(100);
+    expect(greeting).toBeNull();
   });
 
-  it('only allows one param', () => {
-    let message = hello.sayHello('john','cathy');
-    expect(message).toBeNull();
+  it('input string, returns string', () => {
+    let randomString = faker.random.word();
+    let greeting = greet(randomString);
+    expect(typeof greeting).toEqual('string');
   });
-
-  it('does not allow numeric values', () => {
-    let message = hello.sayHello(1);
-    expect(message).toBeNull();
-  });
-
-  it('does not allow arrays as a param', () => {
-    let message = hello.sayHello([]);
-    expect(message).toBeNull();
-  });
-
-  it('does not allow objects as a param', () => {
-    let message = hello.sayHello({});
-    expect(message).toBeNull();
-  });
-
-  it('works when given a word', () => {
-    var message = hello.sayHello('John');
-    var expectedOutput = 'Hello, John';
-    expect(message).toEqual(expectedOutput);
+  
+  it('gives `hello world` when given input `world`', () => {
+    let greeting = greet('world');
+    expect(greeting).toEqual('hello world');
   });
 
 });
