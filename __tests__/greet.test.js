@@ -1,5 +1,5 @@
 'use strict';
-const greet = require('../lib/greet.js').default.default.default.default;
+const greet = require('../lib/greet.js');
 const faker = require('faker');
 
 describe('Greet Tests', () => {
