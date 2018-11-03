@@ -2,19 +2,11 @@
 
 const greet = require('./lib/greet.js');
 const math = require('./lib/arithmetic.js');
-var faker = require('faker');
-
-var randomNumberFirst = faker.random.number();
-var randomNumberSecond = faker.random.number();
-var randomNameFirst = faker.name.findName();
 
 console.log(greet('JOHN'));
-console.log(math.add(1,3)); // 4
-console.log(math.subtract(1,3)); // -2
-
-console.log(greet(randomNameFirst));
-console.log(math.add(randomNumberFirst, randomNumberSecond));
-console.log(math.subtract(randomNumberFirst, randomNumberSecond));
-console.log(math.multiply(randomNumberFirst, randomNumberSecond));
-console.log(math.divide(randomNumberFirst, randomNumberSecond));
-console.log(greet.hello(randomNameFirst));
+console.log(math.add(2,4)); //6
+console.log(math.subtract(2,4)); //-2
+console.log(math.multiply(2,4)); //8
+console.log(math.divide(4,2)); //2
+console.log(math.divide(0,2)); //0
+console.log(math.divide(2,0)); //null
